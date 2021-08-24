@@ -10,4 +10,5 @@ public interface DeptService {
 
     Collection<Dept> getAllDepts();
     Optional<Dept> getDeptById(Integer id);
+    Dept addNewDept(Dept newDept);
 }

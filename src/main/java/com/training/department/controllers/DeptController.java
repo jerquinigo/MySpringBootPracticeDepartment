@@ -28,4 +28,10 @@ public class DeptController {
     public Optional<Dept> getDeptById(@PathVariable Integer id) {
         return deptService.getDeptById(id);
     }
+
+    @PostMapping(value="/posts")
+    @ResponseBody
+    public Dept addNewDept(@RequestBody Dept newDept) {
+        return deptService.addNewDept(newDept);
+    }
 }
