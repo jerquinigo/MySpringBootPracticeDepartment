@@ -2,6 +2,7 @@ package com.training.department.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "dept")
@@ -13,6 +14,19 @@ public class Dept implements Serializable {
     private Integer deptId;
     @Column(name="deptname")
     private String deptName;
+
+    @JoinColumn(name="deptid", referencedColumnName="employeeid")
+    @OneToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST})
+
+//    private List<Employees> employees;
+//
+//    public List<Employees> getEmployees() {
+//        return employees;
+//    }
+//
+//    public void setEmployees(List<Employees> employees) {
+//        this.employees = employees;
+//    }
 
     public Integer getDeptId() {
         return deptId;
